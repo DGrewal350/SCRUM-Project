@@ -18,14 +18,20 @@
     <div>
       <ul class="nav navbar-nav">
         <% if user_signed_in? then %>
-        <% if current_user.role_id == 1 then %>
-            <li><a href="/calendar/main">Calendar</a></li>
-            <li><a href="/users">Users</a></li>
+        <li><a href="/">Home</a></li>
+        <% if current_user.admin? then %>
+        <li><a href="/calendar/main">Calendar</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
             <li><a href="/roles">Roles</a></li>
-        <% else %>
-            <li><a href="#">Availability</a></li>
+            <li><a href="/users">Users</a></li>
+          </ul>
         <% end %>
-        <li><a href="/users/edit">Account</a></li>
+        </li>
+        <li><a href="/shifts/new">Shifts</a></li>
+        <li><a href="/users/edit">User Account</a></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>

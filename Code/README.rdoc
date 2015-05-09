@@ -5,23 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+Run bundle
+Run bundle install
+Open postgres
+Run rake db:create
+Run rake db:migrate
+Run rake db:seed
+Run rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+// to login Admin view:
+// 			account:   Admin@gmail.com
+//			password:  pass
+// to login User view:
+//			account:   User@gmail.com
+// 			password:  12345678
 
 
 Please feel free to use a different markup language if you do not plan to run

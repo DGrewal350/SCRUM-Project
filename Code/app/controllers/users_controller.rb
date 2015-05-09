@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
+  before_filter :authorize_admin
+  #before_filter :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
-   
   end
 
   # GET /users/1
@@ -20,14 +21,13 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user.admin = false
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'user was successfully created.' }
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if User.update(@user.id, update_params)
         format.html { redirect_to @user, notice: 'user was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -71,7 +71,11 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user)
+      params.require(:user).permit(:last_name, :first_name, :phone, :role_id, :email, :password, :password_confirmation)
+    end
+
+    def update_params
+      params.require(:user).permit(:email, :last_name, :first_name, :role_id, :phone, :password, :password_confirmation)
     end
   
 end

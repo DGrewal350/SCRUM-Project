@@ -1,0 +1,34 @@
+<%= form_for(@shift) do |f| %>
+<% if @shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being submitted:</h2>
+
+      <ul>
+      <% @role.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form class="form-inline" role="form">
+    <div class="form-group">
+      <%= f.label :date %><br />
+      <%= f.date_select :date, autofocus: true, class: "form-control", :value => Date.today %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :startTime %><br />
+      <%= f.time_select :startTime, autofocus: true, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :endTime %><br />
+      <%= f.time_select :endTime, autofocus: true, class: "form-control"%>
+    </div>  
+
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-primary"%>
+  </div>
+<% end %>
+</div>
+</form>

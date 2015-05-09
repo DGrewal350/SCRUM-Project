@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150430015353) do
     t.string   "first_name"
     t.string   "phone"
     t.integer  "role_id"
+    t.boolean  "admin",                               null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
