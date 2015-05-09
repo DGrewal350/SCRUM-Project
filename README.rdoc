@@ -3,23 +3,20 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Run bundle  
+Run bundle install  
+Open postgres  
+Run rake db:create    
+Run rake db:migrate    
+Run rake db:seed    
+Run rails s    
 
-Run bundle
-Run bundle install
-Open postgres
-Run rake db:create
-Run rake db:migrate
-Run rake db:seed
-Run rails s
-
-// to login Admin view:
-// 			account:   Admin@gmail.com
-//			password:  pass
-// to login User view:
-//			account:   User@gmail.com
-// 			password:  12345678
+// to login Admin view:  
+// 			account:   Admin@gmail.com  
+//			password:  pass  
+// to login User view:  
+//			account:   User@gmail.com  
+// 			password:  12345678  
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
