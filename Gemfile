@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.0.0"
 
 # Authentication Gems
 gem 'devise'
@@ -17,8 +18,6 @@ gem 'momentjs-rails'
 ###
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-
-gem 'ruby', '2.0.0'
 
 gem 'rails_12factor'
 
