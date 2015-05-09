@@ -3,5 +3,6 @@ class AddUserDataToUsers < ActiveRecord::Migration
     add_column :users, :last_name, :string, :after => :id
     add_column :users, :first_name, :string, :after => :last_name
     add_column :users, :phone, :string, :after => :first_name
+    add_column :users, :admin, :boolean
   end
 end
